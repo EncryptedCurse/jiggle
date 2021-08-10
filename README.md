@@ -1,5 +1,9 @@
 # jiggle
 
-Simple Windows tray utility that will move your cursor to a random position every 2.5 minutes.
+Simple Windows tray utility that will simulate user activity at a customizable interval.
 
-Due to legal reasons, I have been advised to continue this README no further.
+mode | description
+-|-
+mouse jump | set the cursor's exact position to a random point
+mouse slide | move the cursor in a straight line to a random point (linear interpolation)
+start search | open the start menu and type a preset string
