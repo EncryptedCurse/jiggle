@@ -22,5 +22,65 @@ namespace Jiggle.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Enabled {
+            get {
+                return ((bool)(this["Enabled"]));
+            }
+            set {
+                this["Enabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("startMenu")]
+        public string Mode {
+            get {
+                return ((string)(this["Mode"]));
+            }
+            set {
+                this["Mode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoPause {
+            get {
+                return ((bool)(this["AutoPause"]));
+            }
+            set {
+                this["AutoPause"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public uint ActivityInterval {
+            get {
+                return ((uint)(this["ActivityInterval"]));
+            }
+            set {
+                this["ActivityInterval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public uint PauseInterval {
+            get {
+                return ((uint)(this["PauseInterval"]));
+            }
+            set {
+                this["PauseInterval"] = value;
+            }
+        }
     }
 }

@@ -1,0 +1,68 @@
+﻿<Window x:Class="Jiggle.IntervalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="Jiggle"
+        SizeToContent="Height"
+        Width="212"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <sys:Double x:Key="Padding">12</sys:Double>
+        <sys:Double x:Key="HalfPadding">6</sys:Double>
+        <sys:Double x:Key="RowHeight">30</sys:Double>
+    </Window.Resources>
+    <Grid Margin="{Binding Source={StaticResource Padding}, Mode=OneTime}">
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="FontFamily" Value="Consolas" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="MaxLength" Value="5" />
+                <Setter Property="Padding" Value="4,0,0,0" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <EventSetter Event="PreviewTextInput" Handler="IntegerTextBox_PreviewTextInput" />
+                <EventSetter Event="TextChanged" Handler="IntegerTextBox_TextChanged" />
+            </Style>
+            <Style TargetType="{x:Type Label}">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="HorizontalAlignment" Value="Right" />
+                <Setter Property="HorizontalContentAlignment" Value="Right" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <!-- 0 --> <RowDefinition Height="*" />
+            <!-- x --> <RowDefinition Height="{Binding Source={StaticResource Padding}, Mode=OneTime}" />
+            <!-- 2 --> <RowDefinition Height="{Binding Source={StaticResource RowHeight}, Mode=OneTime}" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <!-- 0 --> <RowDefinition Height="{Binding Source={StaticResource RowHeight}, Mode=OneTime}" />
+                <!-- x --> <RowDefinition Height="{Binding Source={StaticResource Padding}, Mode=OneTime}" />
+                <!-- 2 --> <RowDefinition Height="{Binding Source={StaticResource RowHeight}, Mode=OneTime}" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <!-- 0 --> <ColumnDefinition Width="auto" />
+                <!-- x --> <ColumnDefinition Width="{Binding Source={StaticResource HalfPadding}, Mode=OneTime}" />
+                <!-- 2 --> <ColumnDefinition Width="*" />
+                <!-- x --> <ColumnDefinition Width="{Binding Source={StaticResource HalfPadding}, Mode=OneTime}" />
+                <!-- 4 --> <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Activity:" Grid.Row="0" Grid.Column="0" />
+            <TextBox Name="ActivityIntervalTextBox" Grid.Row="0" Grid.Column="2" />
+            <Label Content="seconds" Grid.Row="0" Grid.Column="4" />
+            <Label Content="Pause:" Grid.Row="2" Grid.Column="0" />
+            <TextBox Name="PauseIntervalTextBox" Grid.Row="2" Grid.Column="2" />
+            <Label Content="seconds" Grid.Row="2" Grid.Column="4" />
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="{Binding Source={StaticResource Padding}, Mode=OneTime}" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Content="Save" Grid.Column="0" Click="SaveButton_Click" />
+            <Button Content="Cancel" Grid.Column="2" IsCancel="True" />
+        </Grid>
+    </Grid>
+</Window>
