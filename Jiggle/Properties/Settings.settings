@@ -6,16 +6,16 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="Mode" Type="System.String" Scope="User">
-      <Value Profile="(Default)">startMenu</Value>
+      <Value Profile="(Default)">mouseJump</Value>
     </Setting>
-    <Setting Name="AutoPause" Provider="Bluegrams.Application.PortableSettingsProvider" Type="System.Boolean" Scope="User">
+    <Setting Name="AutoPause" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ActivityInterval" Type="System.UInt32" Scope="User">
-      <Value Profile="(Default)">5</Value>
+      <Value Profile="(Default)">60</Value>
     </Setting>
     <Setting Name="PauseInterval" Type="System.UInt32" Scope="User">
-      <Value Profile="(Default)">2</Value>
+      <Value Profile="(Default)">20</Value>
     </Setting>
   </Settings>
 </SettingsFile>
